@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.27.1
 // 	protoc        v3.17.3
-// source: projekt7/proto/user/service.proto
+// source: 19chat/proto/user/service.proto
 
 package grpc
 
@@ -39,7 +39,7 @@ type CreateUserRequest struct {
 func (x *CreateUserRequest) Reset() {
 	*x = CreateUserRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_projekt7_proto_user_service_proto_msgTypes[0]
+		mi := &file_19chat_proto_user_service_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -52,7 +52,7 @@ func (x *CreateUserRequest) String() string {
 func (*CreateUserRequest) ProtoMessage() {}
 
 func (x *CreateUserRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_projekt7_proto_user_service_proto_msgTypes[0]
+	mi := &file_19chat_proto_user_service_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -65,7 +65,7 @@ func (x *CreateUserRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateUserRequest.ProtoReflect.Descriptor instead.
 func (*CreateUserRequest) Descriptor() ([]byte, []int) {
-	return file_projekt7_proto_user_service_proto_rawDescGZIP(), []int{0}
+	return file_19chat_proto_user_service_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *CreateUserRequest) GetEmail() string {
@@ -105,7 +105,7 @@ type CreateUserResponse struct {
 func (x *CreateUserResponse) Reset() {
 	*x = CreateUserResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_projekt7_proto_user_service_proto_msgTypes[1]
+		mi := &file_19chat_proto_user_service_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -118,7 +118,7 @@ func (x *CreateUserResponse) String() string {
 func (*CreateUserResponse) ProtoMessage() {}
 
 func (x *CreateUserResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_projekt7_proto_user_service_proto_msgTypes[1]
+	mi := &file_19chat_proto_user_service_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -131,7 +131,7 @@ func (x *CreateUserResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateUserResponse.ProtoReflect.Descriptor instead.
 func (*CreateUserResponse) Descriptor() ([]byte, []int) {
-	return file_projekt7_proto_user_service_proto_rawDescGZIP(), []int{1}
+	return file_19chat_proto_user_service_proto_rawDescGZIP(), []int{1}
 }
 
 type LoginUserRequest struct {
@@ -146,7 +146,7 @@ type LoginUserRequest struct {
 func (x *LoginUserRequest) Reset() {
 	*x = LoginUserRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_projekt7_proto_user_service_proto_msgTypes[2]
+		mi := &file_19chat_proto_user_service_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -159,7 +159,7 @@ func (x *LoginUserRequest) String() string {
 func (*LoginUserRequest) ProtoMessage() {}
 
 func (x *LoginUserRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_projekt7_proto_user_service_proto_msgTypes[2]
+	mi := &file_19chat_proto_user_service_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -172,7 +172,7 @@ func (x *LoginUserRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LoginUserRequest.ProtoReflect.Descriptor instead.
 func (*LoginUserRequest) Descriptor() ([]byte, []int) {
-	return file_projekt7_proto_user_service_proto_rawDescGZIP(), []int{2}
+	return file_19chat_proto_user_service_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *LoginUserRequest) GetEmail() string {
@@ -200,7 +200,7 @@ type LoginUserResponse struct {
 func (x *LoginUserResponse) Reset() {
 	*x = LoginUserResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_projekt7_proto_user_service_proto_msgTypes[3]
+		mi := &file_19chat_proto_user_service_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -213,7 +213,7 @@ func (x *LoginUserResponse) String() string {
 func (*LoginUserResponse) ProtoMessage() {}
 
 func (x *LoginUserResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_projekt7_proto_user_service_proto_msgTypes[3]
+	mi := &file_19chat_proto_user_service_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -226,7 +226,7 @@ func (x *LoginUserResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LoginUserResponse.ProtoReflect.Descriptor instead.
 func (*LoginUserResponse) Descriptor() ([]byte, []int) {
-	return file_projekt7_proto_user_service_proto_rawDescGZIP(), []int{3}
+	return file_19chat_proto_user_service_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *LoginUserResponse) GetAccessToken() string {
@@ -245,7 +245,7 @@ type GetUserInfoRequest struct {
 func (x *GetUserInfoRequest) Reset() {
 	*x = GetUserInfoRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_projekt7_proto_user_service_proto_msgTypes[4]
+		mi := &file_19chat_proto_user_service_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -258,7 +258,7 @@ func (x *GetUserInfoRequest) String() string {
 func (*GetUserInfoRequest) ProtoMessage() {}
 
 func (x *GetUserInfoRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_projekt7_proto_user_service_proto_msgTypes[4]
+	mi := &file_19chat_proto_user_service_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -271,7 +271,7 @@ func (x *GetUserInfoRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetUserInfoRequest.ProtoReflect.Descriptor instead.
 func (*GetUserInfoRequest) Descriptor() ([]byte, []int) {
-	return file_projekt7_proto_user_service_proto_rawDescGZIP(), []int{4}
+	return file_19chat_proto_user_service_proto_rawDescGZIP(), []int{4}
 }
 
 type GetUserInfoResponse struct {
@@ -287,7 +287,7 @@ type GetUserInfoResponse struct {
 func (x *GetUserInfoResponse) Reset() {
 	*x = GetUserInfoResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_projekt7_proto_user_service_proto_msgTypes[5]
+		mi := &file_19chat_proto_user_service_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -300,7 +300,7 @@ func (x *GetUserInfoResponse) String() string {
 func (*GetUserInfoResponse) ProtoMessage() {}
 
 func (x *GetUserInfoResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_projekt7_proto_user_service_proto_msgTypes[5]
+	mi := &file_19chat_proto_user_service_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -313,7 +313,7 @@ func (x *GetUserInfoResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetUserInfoResponse.ProtoReflect.Descriptor instead.
 func (*GetUserInfoResponse) Descriptor() ([]byte, []int) {
-	return file_projekt7_proto_user_service_proto_rawDescGZIP(), []int{5}
+	return file_19chat_proto_user_service_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *GetUserInfoResponse) GetEmail() string {
@@ -351,7 +351,7 @@ type StreamMessage struct {
 func (x *StreamMessage) Reset() {
 	*x = StreamMessage{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_projekt7_proto_user_service_proto_msgTypes[6]
+		mi := &file_19chat_proto_user_service_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -364,7 +364,7 @@ func (x *StreamMessage) String() string {
 func (*StreamMessage) ProtoMessage() {}
 
 func (x *StreamMessage) ProtoReflect() protoreflect.Message {
-	mi := &file_projekt7_proto_user_service_proto_msgTypes[6]
+	mi := &file_19chat_proto_user_service_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -377,7 +377,7 @@ func (x *StreamMessage) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StreamMessage.ProtoReflect.Descriptor instead.
 func (*StreamMessage) Descriptor() ([]byte, []int) {
-	return file_projekt7_proto_user_service_proto_rawDescGZIP(), []int{6}
+	return file_19chat_proto_user_service_proto_rawDescGZIP(), []int{6}
 }
 
 func (m *StreamMessage) GetBody() isStreamMessage_Body {
@@ -428,7 +428,7 @@ type UserList struct {
 func (x *UserList) Reset() {
 	*x = UserList{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_projekt7_proto_user_service_proto_msgTypes[7]
+		mi := &file_19chat_proto_user_service_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -441,7 +441,7 @@ func (x *UserList) String() string {
 func (*UserList) ProtoMessage() {}
 
 func (x *UserList) ProtoReflect() protoreflect.Message {
-	mi := &file_projekt7_proto_user_service_proto_msgTypes[7]
+	mi := &file_19chat_proto_user_service_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -454,7 +454,7 @@ func (x *UserList) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UserList.ProtoReflect.Descriptor instead.
 func (*UserList) Descriptor() ([]byte, []int) {
-	return file_projekt7_proto_user_service_proto_rawDescGZIP(), []int{7}
+	return file_19chat_proto_user_service_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *UserList) GetUser() []*User {
@@ -477,7 +477,7 @@ type User struct {
 func (x *User) Reset() {
 	*x = User{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_projekt7_proto_user_service_proto_msgTypes[8]
+		mi := &file_19chat_proto_user_service_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -490,7 +490,7 @@ func (x *User) String() string {
 func (*User) ProtoMessage() {}
 
 func (x *User) ProtoReflect() protoreflect.Message {
-	mi := &file_projekt7_proto_user_service_proto_msgTypes[8]
+	mi := &file_19chat_proto_user_service_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -503,7 +503,7 @@ func (x *User) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use User.ProtoReflect.Descriptor instead.
 func (*User) Descriptor() ([]byte, []int) {
-	return file_projekt7_proto_user_service_proto_rawDescGZIP(), []int{8}
+	return file_19chat_proto_user_service_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *User) GetUserId() int64 {
@@ -538,7 +538,7 @@ type Messages struct {
 func (x *Messages) Reset() {
 	*x = Messages{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_projekt7_proto_user_service_proto_msgTypes[9]
+		mi := &file_19chat_proto_user_service_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -551,7 +551,7 @@ func (x *Messages) String() string {
 func (*Messages) ProtoMessage() {}
 
 func (x *Messages) ProtoReflect() protoreflect.Message {
-	mi := &file_projekt7_proto_user_service_proto_msgTypes[9]
+	mi := &file_19chat_proto_user_service_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -564,7 +564,7 @@ func (x *Messages) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Messages.ProtoReflect.Descriptor instead.
 func (*Messages) Descriptor() ([]byte, []int) {
-	return file_projekt7_proto_user_service_proto_rawDescGZIP(), []int{9}
+	return file_19chat_proto_user_service_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *Messages) GetMessages() []*Message {
@@ -588,7 +588,7 @@ type Message struct {
 func (x *Message) Reset() {
 	*x = Message{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_projekt7_proto_user_service_proto_msgTypes[10]
+		mi := &file_19chat_proto_user_service_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -601,7 +601,7 @@ func (x *Message) String() string {
 func (*Message) ProtoMessage() {}
 
 func (x *Message) ProtoReflect() protoreflect.Message {
-	mi := &file_projekt7_proto_user_service_proto_msgTypes[10]
+	mi := &file_19chat_proto_user_service_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -614,7 +614,7 @@ func (x *Message) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Message.ProtoReflect.Descriptor instead.
 func (*Message) Descriptor() ([]byte, []int) {
-	return file_projekt7_proto_user_service_proto_rawDescGZIP(), []int{10}
+	return file_19chat_proto_user_service_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *Message) GetFrom() int64 {
@@ -657,7 +657,7 @@ type SendMessageRequest struct {
 func (x *SendMessageRequest) Reset() {
 	*x = SendMessageRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_projekt7_proto_user_service_proto_msgTypes[11]
+		mi := &file_19chat_proto_user_service_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -670,7 +670,7 @@ func (x *SendMessageRequest) String() string {
 func (*SendMessageRequest) ProtoMessage() {}
 
 func (x *SendMessageRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_projekt7_proto_user_service_proto_msgTypes[11]
+	mi := &file_19chat_proto_user_service_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -683,7 +683,7 @@ func (x *SendMessageRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SendMessageRequest.ProtoReflect.Descriptor instead.
 func (*SendMessageRequest) Descriptor() ([]byte, []int) {
-	return file_projekt7_proto_user_service_proto_rawDescGZIP(), []int{11}
+	return file_19chat_proto_user_service_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *SendMessageRequest) GetTo() int64 {
@@ -711,7 +711,7 @@ type GetMessageHistoryRequest struct {
 func (x *GetMessageHistoryRequest) Reset() {
 	*x = GetMessageHistoryRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_projekt7_proto_user_service_proto_msgTypes[12]
+		mi := &file_19chat_proto_user_service_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -724,7 +724,7 @@ func (x *GetMessageHistoryRequest) String() string {
 func (*GetMessageHistoryRequest) ProtoMessage() {}
 
 func (x *GetMessageHistoryRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_projekt7_proto_user_service_proto_msgTypes[12]
+	mi := &file_19chat_proto_user_service_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -737,7 +737,7 @@ func (x *GetMessageHistoryRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetMessageHistoryRequest.ProtoReflect.Descriptor instead.
 func (*GetMessageHistoryRequest) Descriptor() ([]byte, []int) {
-	return file_projekt7_proto_user_service_proto_rawDescGZIP(), []int{12}
+	return file_19chat_proto_user_service_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *GetMessageHistoryRequest) GetUserId() int64 {
@@ -747,9 +747,9 @@ func (x *GetMessageHistoryRequest) GetUserId() int64 {
 	return 0
 }
 
-var File_projekt7_proto_user_service_proto protoreflect.FileDescriptor
+var File_19chat_proto_user_service_proto protoreflect.FileDescriptor
 
-var file_projekt7_proto_user_service_proto_rawDesc = []byte{
+var file_19chat_proto_user_service_proto_rawDesc = []byte{
 	0x0a, 0x21, 0x70, 0x72, 0x6f, 0x6a, 0x65, 0x6b, 0x74, 0x37, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f,
 	0x2f, 0x75, 0x73, 0x65, 0x72, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x70, 0x72,
 	0x6f, 0x74, 0x6f, 0x12, 0x07, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x1a, 0x1b, 0x67, 0x6f,
@@ -844,19 +844,19 @@ var file_projekt7_proto_user_service_proto_rawDesc = []byte{
 }
 
 var (
-	file_projekt7_proto_user_service_proto_rawDescOnce sync.Once
-	file_projekt7_proto_user_service_proto_rawDescData = file_projekt7_proto_user_service_proto_rawDesc
+	file_19chat_proto_user_service_proto_rawDescOnce sync.Once
+	file_19chat_proto_user_service_proto_rawDescData = file_19chat_proto_user_service_proto_rawDesc
 )
 
-func file_projekt7_proto_user_service_proto_rawDescGZIP() []byte {
-	file_projekt7_proto_user_service_proto_rawDescOnce.Do(func() {
-		file_projekt7_proto_user_service_proto_rawDescData = protoimpl.X.CompressGZIP(file_projekt7_proto_user_service_proto_rawDescData)
+func file_19chat_proto_user_service_proto_rawDescGZIP() []byte {
+	file_19chat_proto_user_service_proto_rawDescOnce.Do(func() {
+		file_19chat_proto_user_service_proto_rawDescData = protoimpl.X.CompressGZIP(file_19chat_proto_user_service_proto_rawDescData)
 	})
-	return file_projekt7_proto_user_service_proto_rawDescData
+	return file_19chat_proto_user_service_proto_rawDescData
 }
 
-var file_projekt7_proto_user_service_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
-var file_projekt7_proto_user_service_proto_goTypes = []interface{}{
+var file_19chat_proto_user_service_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
+var file_19chat_proto_user_service_proto_goTypes = []interface{}{
 	(*CreateUserRequest)(nil),        // 0: service.CreateUserRequest
 	(*CreateUserResponse)(nil),       // 1: service.CreateUserResponse
 	(*LoginUserRequest)(nil),         // 2: service.LoginUserRequest
@@ -872,7 +872,7 @@ var file_projekt7_proto_user_service_proto_goTypes = []interface{}{
 	(*GetMessageHistoryRequest)(nil), // 12: service.GetMessageHistoryRequest
 	(*emptypb.Empty)(nil),            // 13: google.protobuf.Empty
 }
-var file_projekt7_proto_user_service_proto_depIdxs = []int32{
+var file_19chat_proto_user_service_proto_depIdxs = []int32{
 	7,  // 0: service.StreamMessage.list:type_name -> service.UserList
 	9,  // 1: service.StreamMessage.messages:type_name -> service.Messages
 	8,  // 2: service.UserList.user:type_name -> service.User
@@ -896,13 +896,13 @@ var file_projekt7_proto_user_service_proto_depIdxs = []int32{
 	0,  // [0:4] is the sub-list for field type_name
 }
 
-func init() { file_projekt7_proto_user_service_proto_init() }
-func file_projekt7_proto_user_service_proto_init() {
-	if File_projekt7_proto_user_service_proto != nil {
+func init() { file_19chat_proto_user_service_proto_init() }
+func file_19chat_proto_user_service_proto_init() {
+	if File_19chat_proto_user_service_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_projekt7_proto_user_service_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_19chat_proto_user_service_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateUserRequest); i {
 			case 0:
 				return &v.state
@@ -914,7 +914,7 @@ func file_projekt7_proto_user_service_proto_init() {
 				return nil
 			}
 		}
-		file_projekt7_proto_user_service_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_19chat_proto_user_service_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateUserResponse); i {
 			case 0:
 				return &v.state
@@ -926,7 +926,7 @@ func file_projekt7_proto_user_service_proto_init() {
 				return nil
 			}
 		}
-		file_projekt7_proto_user_service_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_19chat_proto_user_service_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*LoginUserRequest); i {
 			case 0:
 				return &v.state
@@ -938,7 +938,7 @@ func file_projekt7_proto_user_service_proto_init() {
 				return nil
 			}
 		}
-		file_projekt7_proto_user_service_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_19chat_proto_user_service_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*LoginUserResponse); i {
 			case 0:
 				return &v.state
@@ -950,7 +950,7 @@ func file_projekt7_proto_user_service_proto_init() {
 				return nil
 			}
 		}
-		file_projekt7_proto_user_service_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_19chat_proto_user_service_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetUserInfoRequest); i {
 			case 0:
 				return &v.state
@@ -962,7 +962,7 @@ func file_projekt7_proto_user_service_proto_init() {
 				return nil
 			}
 		}
-		file_projekt7_proto_user_service_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_19chat_proto_user_service_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetUserInfoResponse); i {
 			case 0:
 				return &v.state
@@ -974,7 +974,7 @@ func file_projekt7_proto_user_service_proto_init() {
 				return nil
 			}
 		}
-		file_projekt7_proto_user_service_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_19chat_proto_user_service_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*StreamMessage); i {
 			case 0:
 				return &v.state
@@ -986,7 +986,7 @@ func file_projekt7_proto_user_service_proto_init() {
 				return nil
 			}
 		}
-		file_projekt7_proto_user_service_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_19chat_proto_user_service_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UserList); i {
 			case 0:
 				return &v.state
@@ -998,7 +998,7 @@ func file_projekt7_proto_user_service_proto_init() {
 				return nil
 			}
 		}
-		file_projekt7_proto_user_service_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_19chat_proto_user_service_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*User); i {
 			case 0:
 				return &v.state
@@ -1010,7 +1010,7 @@ func file_projekt7_proto_user_service_proto_init() {
 				return nil
 			}
 		}
-		file_projekt7_proto_user_service_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_19chat_proto_user_service_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Messages); i {
 			case 0:
 				return &v.state
@@ -1022,7 +1022,7 @@ func file_projekt7_proto_user_service_proto_init() {
 				return nil
 			}
 		}
-		file_projekt7_proto_user_service_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_19chat_proto_user_service_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Message); i {
 			case 0:
 				return &v.state
@@ -1034,7 +1034,7 @@ func file_projekt7_proto_user_service_proto_init() {
 				return nil
 			}
 		}
-		file_projekt7_proto_user_service_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+		file_19chat_proto_user_service_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*SendMessageRequest); i {
 			case 0:
 				return &v.state
@@ -1046,7 +1046,7 @@ func file_projekt7_proto_user_service_proto_init() {
 				return nil
 			}
 		}
-		file_projekt7_proto_user_service_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+		file_19chat_proto_user_service_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetMessageHistoryRequest); i {
 			case 0:
 				return &v.state
@@ -1059,7 +1059,7 @@ func file_projekt7_proto_user_service_proto_init() {
 			}
 		}
 	}
-	file_projekt7_proto_user_service_proto_msgTypes[6].OneofWrappers = []interface{}{
+	file_19chat_proto_user_service_proto_msgTypes[6].OneofWrappers = []interface{}{
 		(*StreamMessage_List)(nil),
 		(*StreamMessage_Messages)(nil),
 	}
@@ -1067,20 +1067,20 @@ func file_projekt7_proto_user_service_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_projekt7_proto_user_service_proto_rawDesc,
+			RawDescriptor: file_19chat_proto_user_service_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   13,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_projekt7_proto_user_service_proto_goTypes,
-		DependencyIndexes: file_projekt7_proto_user_service_proto_depIdxs,
-		MessageInfos:      file_projekt7_proto_user_service_proto_msgTypes,
+		GoTypes:           file_19chat_proto_user_service_proto_goTypes,
+		DependencyIndexes: file_19chat_proto_user_service_proto_depIdxs,
+		MessageInfos:      file_19chat_proto_user_service_proto_msgTypes,
 	}.Build()
-	File_projekt7_proto_user_service_proto = out.File
-	file_projekt7_proto_user_service_proto_rawDesc = nil
-	file_projekt7_proto_user_service_proto_goTypes = nil
-	file_projekt7_proto_user_service_proto_depIdxs = nil
+	File_19chat_proto_user_service_proto = out.File
+	file_19chat_proto_user_service_proto_rawDesc = nil
+	file_19chat_proto_user_service_proto_goTypes = nil
+	file_19chat_proto_user_service_proto_depIdxs = nil
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -1370,5 +1370,5 @@ var _UserService_serviceDesc = grpc.ServiceDesc{
 			ServerStreams: true,
 		},
 	},
-	Metadata: "projekt7/proto/user/service.proto",
+	Metadata: "19chat/proto/user/service.proto",
 }

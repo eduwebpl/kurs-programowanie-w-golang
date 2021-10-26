@@ -3,6 +3,7 @@ package user
 import (
 	"19chat/pkg/helpers"
 	"fmt"
+	"sort"
 
 	"github.com/golang-jwt/jwt"
 )
@@ -12,6 +13,9 @@ type UserService interface {
 	Login(email string, password string) (string, error)
 	Authorize(accessToken string) (uint, error)
 	GetInfo(userId uint) (User, error)
+	// Chat
+	SendMessage(message Message) error
+	GetMessageHistory(fromUser uint, toUser uint) ([]Message, error)
 }
 
 func DefaultUserService(infra UserInfra, tokenSecret string) UserService {
@@ -113,4 +117,52 @@ func (u *userService) GetInfo(userId uint) (User, error) {
 		return User{}, err
 	}
 	return user, nil
+}
+
+// Chat
+
+func (u *userService) SendMessage(message Message) error {
+	users := []uint{uint(message.From), uint(message.To)}
+	userList, err := u.infra.GetUsers(users)
+	if err != nil {
+		return err
+	}
+
+	for _, userID := range users {
+		exist := false
+		for _, user := range userList {
+			if user.ID == userID {
+				exist = true
+			}
+		}
+		if !exist {
+			return ErrUserNotExist
+		}
+	}
+
+	err = u.infra.CreateMessage(message)
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (u *userService) GetMessageHistory(fromUser uint, toUser uint) ([]Message, error) {
+	fromUserHistory, err := u.infra.GetMessages(fromUser, toUser)
+	if err != nil {
+		return []Message{}, err
+	}
+	toUserHistory, err := u.infra.GetMessages(toUser, fromUser)
+	if err != nil {
+		return []Message{}, err
+	}
+
+	wholeHistory := append(fromUserHistory, toUserHistory...)
+
+	sort.Slice(wholeHistory, func(i, j int) bool {
+		return wholeHistory[i].Date < wholeHistory[j].Date
+	})
+
+	return wholeHistory, nil
 }

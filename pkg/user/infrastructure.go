@@ -1,6 +1,10 @@
 package user
 
-import "github.com/jinzhu/gorm"
+import (
+	"errors"
+
+	"github.com/jinzhu/gorm"
+)
 
 type UserInfra interface {
 	CreateNewUser(user User) error
@@ -8,6 +12,10 @@ type UserInfra interface {
 	GetUserInfo(accessToken string) (User, error)
 	GetUserInfoByID(id uint) (User, error)
 	GetUser(email string) (User, error)
+	// Chat
+	GetUsers(id []uint) ([]User, error)
+	CreateMessage(message Message) error
+	GetMessages(fromUserID uint, toUserID uint) ([]Message, error)
 }
 
 func DefaultUserInfra(db *gorm.DB) UserInfra {
@@ -61,4 +69,39 @@ func (u *userInfra) GetUser(email string) (User, error) {
 		return User{}, result.Error
 	}
 	return user, nil
+}
+
+// Chat
+func (u *userInfra) GetUsers(ids []uint) ([]User, error) {
+	users := []User{}
+	result := u.db.Find(&users, ids)
+	if result.Error != nil {
+		if errors.Is(result.Error, gorm.ErrRecordNotFound) {
+			return []User{}, nil
+		}
+		return []User{}, result.Error
+	}
+
+	return users, nil
+}
+
+func (u *userInfra) CreateMessage(message Message) error {
+	result := u.db.Create(&message)
+	if result.Error != nil {
+		return result.Error
+	}
+	return nil
+}
+
+func (u *userInfra) GetMessages(fromUserID uint, toUserID uint) ([]Message, error) {
+	messages := []Message{}
+	result := u.db.Where(map[string]interface{}{"from": fromUserID, "to": toUserID}).Find(&messages)
+	if result.Error != nil {
+		if errors.Is(result.Error, gorm.ErrRecordNotFound) {
+			return []Message{}, nil
+		}
+		return []Message{}, result.Error
+	}
+
+	return messages, nil
 }

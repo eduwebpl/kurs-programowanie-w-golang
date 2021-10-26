@@ -5,7 +5,7 @@ package service;
 import "google/protobuf/empty.proto";
 
 
-option go_package = "projekt7/pkg/adapter/grpc";
+option go_package = "19chat/pkg/adapter/grpc";
 
 service UserService {
   rpc CreateUser(CreateUserRequest) returns (CreateUserResponse) {}
