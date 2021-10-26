@@ -1,8 +1,8 @@
 package main
 
 import (
-	"17swaggo/pkg/adapter/http"
-	"17swaggo/pkg/user"
+	"18grpc/pkg/adapter/http"
+	"18grpc/pkg/user"
 	"log"
 	"os"
 
@@ -10,7 +10,7 @@ import (
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/sqlite"
 
-	_ "17swaggo/docs"
+	_ "18grpc/docs"
 
 	swaggerFiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"

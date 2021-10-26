@@ -1,4 +1,4 @@
-module 17swaggo
+module 18grpc
 
 go 1.17
 
