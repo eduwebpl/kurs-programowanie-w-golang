@@ -1,0 +1,47 @@
+POST http://localhost:8080/user/create
+
+{
+    "email": "example@eduweb.pl",
+    "name": "kamil",
+    "lastName": "Nowak",
+    "password": "eduweb"
+}
+###
+
+POST http://localhost:8080/user/authorize
+
+###
+
+POST http://localhost:8080/user/authorize
+
+{
+    "email": "example@eduweb.pl"
+}
+###
+
+POST http://localhost:8080/user/authorize
+
+{
+    "email": "example@eduweb.pl",
+    "password": "qwe"
+}
+
+###
+
+POST http://localhost:8080/user/authorize
+
+{
+    "email": "example@eduweb.pl",
+    "password": "eduweb"
+}
+
+###
+GET http://localhost:8080/user/info
+
+###
+GET http://localhost:8080/user/info
+Authorization: ""
+
+###
+GET http://localhost:8080/user/info
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0fQ.akrJy-ELJoZHwuyWk8i1vDDiybI6scr01U835lo0XB0

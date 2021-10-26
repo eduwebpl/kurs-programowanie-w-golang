@@ -1,56 +1,50 @@
 package main
 
 import (
+	"16kontouzytkownika/pkg/adapter/http"
+	"16kontouzytkownika/pkg/user"
+	"log"
+	"os"
+
+	"github.com/gin-gonic/gin"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/sqlite"
 )
 
+const accessTokenSecret = "eduweb.pl"
+
 func main() {
+	os.Setenv("ACCESS_SECRET", accessTokenSecret)
 
 	db, err := gorm.Open("sqlite3", "database.db")
 
 	if err != nil {
-		panic("Failed to open the SQLite database.")
+		log.Fatal("Failed to open the SQLite database.")
 	}
 
-	db.AutoMigrate(&User{})
+	db.AutoMigrate(&user.User{})
 
-	// newUser := User{
-	// 	Name:        "Michał",
-	// 	LastName:    "",
-	// 	AccessToken: "",
-	// }
-	// db.Create(&newUser)
+	userInfra := user.DefaultUserInfra(db)
+	userService := user.DefaultUserService(userInfra, accessTokenSecret)
 
-	// result := db.Delete(&User{}, 1)
-	// if result.Error != nil {
-	// 	fmt.Println(result.Error)
-	// }
+	server := gin.Default()
 
-	// users := []User{}
-	// result := db.Find(&users, "name = ?", "Michał")
-	// if result.Error != nil {
-	// 	if !errors.Is(result.Error, gorm.ErrRecordNotFound) {
-	// 		fmt.Println(result.Error)
-	// 		return
-	// 	}
-	// }
-	// fmt.Println(users)
+	adapter := http.DefaultUserAdapter(userService)
 
-	// user := User{}
-	// user.ID = 2
-	// user.Name = "Michał2"
-	// user.LastName = "Nowak"
+	userGroup := server.Group("/user")
 
-	// result := db.Model(&user).Updates(user)
-	// if result.Error != nil {
-	// 	fmt.Println(result.Error)
-	// }
-}
+	{
+		userGroup.POST("/create", adapter.Create)
+		userGroup.POST("/authorize", adapter.Login)
 
-type User struct {
-	gorm.Model
-	Name        string `json:"name";gorm:"name"`
-	LastName    string `json:"lastName";gorm:"last_name"`
-	AccessToken string `json:"accessToken";gorm:"access_token"`
+		authorizedGroup := userGroup.Group("", adapter.AuthorizationMiddleware)
+		{
+			authorizedGroup.GET("/info", adapter.GetUserInfo)
+		}
+	}
+
+	err = server.Run()
+	if err != nil {
+		log.Fatal(err)
+	}
 }
