@@ -1,3 +1,3 @@
-module 8zmianamyslenia
+module 9parsowaniejsona
 
 go 1.17
