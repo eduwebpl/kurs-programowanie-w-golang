@@ -1,40 +1,28 @@
 package main
 
 import (
+	"log"
 	"net/http"
-
-	"github.com/gin-gonic/gin"
+	"time"
 )
 
 func main() {
-	server := gin.Default()
 
-	server.GET("/", rootPath)
-
-	authorized := server.Group("/user/", authorizationMiddleware)
-	{
-		authorized.GET("", getUserInfo)
+	server := &http.Server{
+		Addr:         ":8080",
+		ReadTimeout:  10 * time.Second,
+		WriteTimeout: 10 * time.Second,
+		IdleTimeout:  30 * time.Second,
 	}
 
-	server.Run()
-}
+	http.HandleFunc("/", helloWorld)
 
-func rootPath(c *gin.Context) {
-	c.JSON(http.StatusOK, gin.H{"key": "value"})
-}
-
-func getUserInfo(c *gin.Context) {
-	c.JSON(http.StatusOK, gin.H{"key": c.GetHeader("user")})
-}
-
-func authorizationMiddleware(c *gin.Context) {
-	id := c.GetHeader("user_id")
-	if id != "" {
-		c.Request.Header.Add("user", "Kamil")
-	} else {
-		c.JSON(http.StatusUnauthorized, gin.H{})
-		c.Abort()
-		return
+	err := server.ListenAndServe()
+	if err != nil {
+		log.Fatal(err)
 	}
-	c.Next()
+}
+
+func helloWorld(w http.ResponseWriter, req *http.Request) {
+	w.Write([]byte("Hello world"))
 }
