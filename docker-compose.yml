@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+  app:
+    build: .
+    restart: on-failure
+    depends_on:
+      - database
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+    environment:
+      WAIT_HOSTS: database:5432
+      POSTGRES_DSN: postgres://dbuser:dbpass@database:5432/srv-chat?sslmode=disable
+
+  database:
+    image: postgres:12.3-alpine
+    environment:
+      - POSTGRES_USER=dbuser
+      - POSTGRES_PASSWORD=dbpass
+      - POSTGRES_DB=srv-chat
+    ports:
+      - "5432:5432"
