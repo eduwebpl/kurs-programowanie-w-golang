@@ -1,0 +1,125 @@
+basePath: /
+definitions:
+  http.CreateUser:
+    properties:
+      email:
+        type: string
+      lastName:
+        type: string
+      name:
+        type: string
+      password:
+        type: string
+    type: object
+  http.LoginUserRequest:
+    properties:
+      email:
+        type: string
+      password:
+        type: string
+    type: object
+  http.LoginUserResponse:
+    properties:
+      accessToken:
+        type: string
+    type: object
+  http.UserInfo:
+    properties:
+      email:
+        type: string
+      lastName:
+        type: string
+      name:
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact: {}
+  license:
+    name: MIT License
+  title: srv-user
+  version: 0.0.0
+paths:
+  /user/authorize:
+    post:
+      consumes:
+      - application/json
+      operationId: login
+      parameters:
+      - description: Login data.
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/http.LoginUserRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/http.LoginUserResponse'
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+        "401":
+          description: Unauthorized
+          schema:
+            type: string
+        "500":
+          description: Internal Server Error
+          schema:
+            type: string
+      summary: Login user to his account
+  /user/create:
+    post:
+      consumes:
+      - application/json
+      operationId: create-user
+      parameters:
+      - description: Login data.
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/http.CreateUser'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            type: string
+        "400":
+          description: ""
+        "401":
+          description: ""
+        "500":
+          description: ""
+      summary: Creates new user
+  /user/info:
+    get:
+      operationId: get-user-info
+      parameters:
+      - description: Login data.
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/http.CreateUser'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/http.UserInfo'
+        "400":
+          description: ""
+        "401":
+          description: ""
+        "500":
+          description: ""
+      summary: Get user info
+swagger: "2.0"

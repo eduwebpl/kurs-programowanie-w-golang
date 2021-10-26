@@ -1,18 +1,28 @@
 package main
 
 import (
-	"16kontouzytkownika/pkg/adapter/http"
-	"16kontouzytkownika/pkg/user"
+	"17swaggo/pkg/adapter/http"
+	"17swaggo/pkg/user"
 	"log"
 	"os"
 
 	"github.com/gin-gonic/gin"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/sqlite"
+
+	_ "17swaggo/docs"
+
+	swaggerFiles "github.com/swaggo/files"
+	ginSwagger "github.com/swaggo/gin-swagger"
 )
 
 const accessTokenSecret = "eduweb.pl"
 
+// @title srv-user
+// @version 0.0.0
+// @host localhost:8080
+// @BasePath /
+// @license.name MIT License
 func main() {
 	os.Setenv("ACCESS_SECRET", accessTokenSecret)
 
@@ -42,6 +52,8 @@ func main() {
 			authorizedGroup.GET("/info", adapter.GetUserInfo)
 		}
 	}
+
+	server.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 
 	err = server.Run()
 	if err != nil {

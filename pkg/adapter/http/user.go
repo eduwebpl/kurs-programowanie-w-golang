@@ -1,7 +1,7 @@
 package http
 
 import (
-	"16kontouzytkownika/pkg/user"
+	"17swaggo/pkg/user"
 	"fmt"
 	"net/http"
 	"strconv"
@@ -26,6 +26,15 @@ type userAdapter struct {
 	service user.UserService
 }
 
+// Login user
+// @Summary Login user to his account
+// @ID login
+// @Accept  json
+// @Produce  json
+// @Param body body LoginUserRequest true "Login data."
+// @Success 200 {object} http.LoginUserResponse
+// @Failure 400,401,500 {string} Unauthorized ""
+// @Router /user/authorize [post]
 func (u *userAdapter) Login(c *gin.Context) {
 	loginUser := LoginUserRequest{}
 	err := c.BindJSON(&loginUser)
@@ -50,6 +59,15 @@ func (u *userAdapter) Login(c *gin.Context) {
 	c.JSON(http.StatusOK, response)
 }
 
+// Create user
+// @Summary Creates new user
+// @ID create-user
+// @Accept  json
+// @Produce  json
+// @Param body body CreateUser true "Login data."
+// @Success 201 {string} Success ""
+// @Failure 400,401,500
+// @Router /user/create [post]
 func (u *userAdapter) Create(c *gin.Context) {
 	newUser := CreateUser{}
 	err := c.BindJSON(&newUser)
@@ -71,6 +89,15 @@ func (u *userAdapter) Create(c *gin.Context) {
 	c.JSON(http.StatusCreated, nil)
 }
 
+// Get user info
+// @Summary Get user info
+// @ID get-user-info
+// @Produce  json
+// @Param body body CreateUser true "Login data."
+// @Header 200 {string} Authorized JWT Token "ey..."
+// @Success 200 {object} UserInfo Success
+// @Failure 400,401,500
+// @Router /user/info [get]
 func (u *userAdapter) GetUserInfo(c *gin.Context) {
 	userID, _ := strconv.Atoi(c.GetHeader("user_id"))
 

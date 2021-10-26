@@ -1,8 +1,8 @@
 package user
 
 import (
-	"16kontouzytkownika/pkg/helpers"
 	"fmt"
+	"17swaggo/pkg/helpers"
 
 	"github.com/golang-jwt/jwt"
 )
