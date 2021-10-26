@@ -1,3 +1,3 @@
-module 7goroutines
+module 8zmianamyslenia
 
 go 1.17
