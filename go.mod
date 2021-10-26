@@ -1,3 +1,3 @@
-module 2wskazniki
+module 4struktury
 
 go 1.17
