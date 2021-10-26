@@ -1,7 +1,7 @@
 package main
 
 import (
-	"9parsowaniejsona/internal/users"
+	"10zapisywaniedopliku/internal/users"
 	"fmt"
 	"net/http"
 )
