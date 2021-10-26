@@ -1,7 +1,7 @@
 package user
 
 import (
-	"18grpc/pkg/helpers"
+	"19chat/pkg/helpers"
 	"fmt"
 
 	"github.com/golang-jwt/jwt"
