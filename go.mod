@@ -1,3 +1,3 @@
-module 5interfejsy
+module 6sortmapfilter
 
 go 1.17
