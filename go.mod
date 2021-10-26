@@ -1,3 +1,3 @@
-module 4struktury
+module 5interfejsy
 
 go 1.17
