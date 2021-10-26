@@ -15,14 +15,12 @@ func main() {
 		IdleTimeout:  30 * time.Second,
 	}
 
-	http.HandleFunc("/", helloWorld)
+	staticDirectory := http.FileServer(http.Dir("./static"))
+
+	http.Handle("/", staticDirectory)
 
 	err := server.ListenAndServe()
 	if err != nil {
 		log.Fatal(err)
 	}
-}
-
-func helloWorld(w http.ResponseWriter, req *http.Request) {
-	w.Write([]byte("Hello world"))
 }
