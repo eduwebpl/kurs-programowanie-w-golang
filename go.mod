@@ -1,3 +1,3 @@
-module 6sortmapfilter
+module 7goroutines
 
 go 1.17
