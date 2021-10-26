@@ -1,3 +1,3 @@
-module 11tworzenieserwera
+module 12alternetywnepaczki
 
 go 1.17
