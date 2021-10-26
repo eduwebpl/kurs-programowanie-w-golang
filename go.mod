@@ -1,3 +1,3 @@
-module 1pierwszyskrypt
+module 2wskazniki
 
 go 1.17
